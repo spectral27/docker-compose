@@ -1,0 +1,12 @@
+a {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    color: blue;
+    text-decoration: none;
+    padding-left: 1em;
+}
+
+a:hover {
+    background-color: #eaeaea;
+}

@@ -1,0 +1,8 @@
+#toolbar {
+    height: 4em;
+    background-color: rgba(0, 0, 255, 0.75);
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+  }
+  

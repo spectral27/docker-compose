@@ -1,0 +1,18 @@
+<div id="content">
+    <p>Content will be rendered here:</p>
+    <ng-container *ngTemplateOutlet="mytemplate; context: { intVar: 1, stringVar: 'helloworld' }"></ng-container>
+</div>
+
+<ng-template #mytemplate let-int="intVar" let-str="stringVar">
+    <p><strong>int:</strong> {{ int }}</p>
+    <p><strong>string:</strong> {{ str }}</p>
+</ng-template>
+
+<pre ngNonBindable>
+    &lt;ng-container *ngTemplateOutlet="mytemplate; context: &#123; intVar: 1, stringVar: 'helloworld' &#125;"&gt;&lt;/ng-container&gt;
+
+    &lt;ng-template #mytemplate let-int="intVar" let-str="stringVar"&gt;
+        &lt;p&gt;&lt;strong&gt;int:&lt;/strong&gt; &#123;&#123; int &#125;&#125;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;string:&lt;/strong&gt; &#123;&#123; str &#125;&#125;&lt;/p&gt;
+    &lt;/ng-template&gt;
+</pre>
