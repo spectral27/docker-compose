@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  dccmdatabase:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: dccm
+      POSTGRES_USER: dccm
+      POSTGRES_DB: dccmstorage
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    command: ["postgres", "-c", "log_statement=all"]
+
+  springbootbackend:
+    build:
+      context: ./demo
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dccmdatabase:5432/dccmstorage
+    ports:
+      - 8901:8080
+
+  angularfrontend:
+    build:
+      context: ./ng-test04232120
+    ports:
+      - 4901:80
